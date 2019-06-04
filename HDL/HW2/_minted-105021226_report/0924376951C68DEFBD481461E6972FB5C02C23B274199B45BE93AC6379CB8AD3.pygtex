@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{wire} \PYG{p}{[}\PYG{l+m+mi}{32}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{0}\PYG{p}{]}  \PYG{n}{dec\PYGZus{}1}\PYG{p}{;}
+\PYG{n}{wire} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{:}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{n}{arb\PYGZus{}1}\PYG{p}{;}
+\PYG{p}{...}
+\PYG{l+m+mi}{4}\PYG{n+na}{\PYGZsq{}b1110}\PYG{o}{:} \PYG{n}{Y} \PYG{o}{=} \PYG{n}{dec\PYGZus{}1}\PYG{p}{;}
+\PYG{l+m+mi}{4}\PYG{n+na}{\PYGZsq{}b1111}\PYG{o}{:} \PYG{n}{Y} \PYG{o}{=} \PYG{n}{arb\PYGZus{}1}\PYG{p}{;}
+\end{Verbatim}

@@ -1,0 +1,84 @@
+ncverilog: 14.10-s005: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-s005: Started on Apr 18, 2019 at 22:23:50 CST
+ncverilog
+	ALU_tb.v
+	ALU.v
+Recompiling... reason: file './ALU.v' is newer than expected.
+	expected: Thu Apr 18 22:22:12 2019
+	actual:   Thu Apr 18 22:23:43 2019
+file: ALU.v
+	module worklib.Arbiter:v
+		errors: 0, warnings: 0
+	module worklib.Decoder:v
+		errors: 0, warnings: 0
+	module worklib.AND:v
+		errors: 0, warnings: 0
+	module worklib.OR:v
+		errors: 0, warnings: 0
+	module worklib.NOT:v
+		errors: 0, warnings: 0
+	module worklib.XOR:v
+		errors: 0, warnings: 0
+	module worklib.XNOR:v
+		errors: 0, warnings: 0
+	module worklib.NOR:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Arbiter arb1(A[5-1:0], arb_1);
+	                           |
+ncelab: *W,CUVMPW (./ALU.v,19|28): port sizes differ in port connection (1/5).
+	Decoder dec1(A[5-1:0], dec_1);
+	                           |
+ncelab: *W,CUVMPW (./ALU.v,20|28): port sizes differ in port connection (1/32).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Arbiter:v <0x3a7bfd22>
+			streams:   1, words:   539
+		worklib.Decoder:v <0x21ec4663>
+			streams:   1, words:   300
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                37      10
+		Primitives:             29       1
+		Registers:              11      11
+		Scalar wires:            2       -
+		Expanded wires:        101       4
+		Vectored wires:          2       -
+		Always blocks:           3       3
+		Initial blocks:          3       3
+		Cont. assignments:       1       1
+		Pseudo assignments:      4       4
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb:v
+Loading snapshot worklib.tb:v .................... Done
+*Verdi3* Loading libsscore_ius141.so
+*Verdi3* : Enable Parallel Dumping.
+ncsim> source /usr/cad/cadence/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+A = 00000000000000000000000000000101, B = 00000000000000000000000000000000, Cin = 0, sel = 1110, Y = 00000000000000000000000000000000, Zero = 0
+
+Wrong Answer Q_Q 
+
+A = 00000000000000000000000000000011, B = 00000000000000000000000000000000, Cin = 0, sel = 1110, Y = 00000000000000000000000000000000, Zero = 0
+
+Wrong Answer Q_Q 
+
+A = 00000000000000000000000011111110, B = 00000000000000000000000000000000, Cin = 0, sel = 1111, Y = 00000000000000000000000000000000, Zero = 0
+
+Wrong Answer Q_Q 
+
+-------------------------------
+
+score =         38 / 41 
+Congratulations!!!!!
+You pass all of the testcases. :))))
+ 
+-------------------------------
+
+Simulation complete via $finish(1) at time 1310 NS + 0
+./ALU_tb.v:478 	$finish;	
+ncsim> exit
+TOOL:	ncverilog	14.10-s005: Exiting on Apr 18, 2019 at 22:23:51 CST  (total: 00:00:01)

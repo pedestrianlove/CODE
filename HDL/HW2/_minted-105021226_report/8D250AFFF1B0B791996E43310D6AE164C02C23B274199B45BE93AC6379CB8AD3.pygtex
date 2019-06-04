@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{module} \PYG{k}{AND} \PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}\PYG{p}{);}
+	\PYG{n}{input}  \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{;}
+	\PYG{n}{output} \PYG{n}{c}\PYG{p}{;}
+	\PYG{n}{wire} \PYG{n}{nand\PYGZus{}0}\PYG{p}{;}
+	\PYG{o}{//} \PYG{n}{IMPLEMENTATION}
+	\PYG{k}{nand} \PYG{n}{nand1}\PYG{p}{(}\PYG{n}{nand\PYGZus{}0}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{);}
+	\PYG{k}{NOT} \PYG{n}{N1}\PYG{p}{(}\PYG{n}{nand\PYGZus{}0}\PYG{p}{,} \PYG{n}{c}\PYG{p}{);}
+\PYG{n}{endmodule}
+
+\PYG{n}{module} \PYG{k}{OR} \PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}\PYG{p}{);}
+	\PYG{n}{input}  \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{;}
+	\PYG{n}{output} \PYG{n}{c}\PYG{p}{;}
+	\PYG{n}{wire} \PYG{n}{not\PYGZus{}0}\PYG{p}{,} \PYG{n}{not\PYGZus{}1}\PYG{p}{;}
+	\PYG{o}{//} \PYG{n}{IMPLEMENTATION}
+	\PYG{k}{NOT} \PYG{n}{N1}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{not\PYGZus{}0}\PYG{p}{);}
+	\PYG{k}{NOT} \PYG{n}{N2}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,} \PYG{n}{not\PYGZus{}1}\PYG{p}{);}
+	\PYG{k}{nand}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,} \PYG{n}{not\PYGZus{}0}\PYG{p}{,} \PYG{n}{not\PYGZus{}1}\PYG{p}{);}
+\PYG{n}{endmodule}
+
+\PYG{n}{module} \PYG{k}{NOT} \PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{);}
+	\PYG{n}{input}  \PYG{n}{a}\PYG{p}{;}
+	\PYG{n}{output} \PYG{n}{b}\PYG{p}{;}
+	\PYG{o}{//} \PYG{n}{IMPLEMENTATION}
+	\PYG{k}{nand}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{a}\PYG{p}{);}
+\PYG{n}{endmodule}
+\end{Verbatim}

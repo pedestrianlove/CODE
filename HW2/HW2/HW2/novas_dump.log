@@ -1,0 +1,120 @@
+ncsim 14.10-s005
+Linux 2.6.18-419.el5 #1 SMP Fri Feb 24 22:47:42 UTC 2017 x86_64
+CPU cores: 16
+Limit information:
+======================================
+cputime			unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		10240 kbytes
+coredumpsize	0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		1024
+memorylocked	32 kbytes
+maxproc			386157
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+VCS_HOME=/usr/cad/synopsys/vcs-mx/cur
+SOFT_MAN_DIR=/usr/cad/synopsys/coreconsultant/cur/doc/dware/man
+MYVIMRC=/users/course/2019S/eecs101002/dld003/.vimrc
+VIM=/usr/share/vim
+SHELL=/bin/tcsh
+PCTHOME=/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/pc
+MACHTYPE=x86_64
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+CWR_USING_LNX_KERNEL_THREADS=1
+SSH_CONNECTION=192.168.75.200 50969 192.168.75.54 22
+PATH=/usr/cad/cadence/INCISIV/cur/tools/bin:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/bin:/usr/cad/cadence/INCISIV/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/celtic/bin:/usr/cad/cadence/EDI/cur/tools/plato/bin:/usr/cad/cadence/EDI/cur/tools/dfII/bin:/usr/cad/cadence/EDI/cur/tools/fe/bin:/usr/cad/cadence/EDI/cur/tools/cdsdoc/bin:/usr/cad/cadence/EDI/cur/tools/bin:/usr/cad/cadence/EDI/cur//tools/tlfUtil/bin:/usr/cad/cadence/CTOS/cur/tools/bin:/usr/cad/cadence/MMSIM/cur/tools/dfII/bin:/usr/cad/cadence/MMSIM/cur/tools/bin:/usr/cad/cadence/EXT/cur/tools/bin:/usr/cad/cadence/ETS/cur/tools/bin:/usr/cad/cadence/CONFRML/cur/./bin:/usr/cad/cadence/CONFRML/cur/tools/bin:/usr/cad/cadence/IC/cur/tools/dfII/bin:/usr/cad/cadence/IC/cur/tools/dracula/bin:/usr/cad/cadence/IC/cur/tools/bin:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/pc/bin:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/InnoGUI/Innovator/Bin:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/tools/bin:/usr/cad/synopsys/icc/cur/amd64/syn/bin:/usr/bin/X11:/usr/cad/synopsys/coreconsultant/cur/bin:/usr/cad/synopsys/verdi/cur/bin:/usr/cad/synopsys/verdi/cur/nLint/bin:/usr/cad/synopsys/vcs-mx/cur/bin:/usr/cad/synopsys/vcs-mx/cur/linux/bin:/usr/cad/synopsys/vcs-mx/cur/linux/util:/usr/cad/synopsys/vcs-mx/cur/linux/flexlm:/usr/bin/X11:/usr/cad/synopsys/synthesis/cur/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/bin/X11:/usr/cad/synopsys/primetime/cur/amd64/syn/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin
+LM_LICENSE_FILE=5280@lscic:5280@lsntu:5280@lsncku:26585@lscic:26585@lsnctu:8224@lscic.cic.org.tw
+SNPS_VP_HTYPE=linux
+PRIMETIME=/usr/cad/synopsys/primetime/cur
+ENCOUNTER=/usr/cad/cadence/EDI/cur/tools/fe
+SNPS_VP_PRODUCT=PA
+SSH_TTY=/dev/pts/3
+COWARE_MONITORS_PATH=/users/course/2019S/eecs101002/dld003/.synopsys/monitors:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/IP
+VENDOR=unknown
+COWAREHT=linux
+LS_COLORS=
+SHLIB_PATH=/usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX
+OA_HOME=/usr/cad/cadence/EDI/cur/oa
+DISPLAY=localhost:11.0
+COWARE_PRODUCT=PA
+PWD=/users/course/2019S/eecs101002/dld003/HW2
+G_BROKEN_FILENAMES=1
+MANPATH=:/usr/cad/synopsys/synthesis/cur/doc/syn/man:/usr/cad/synopsys/coreconsultant/cur/doc/dware/man
+HOME=/users/course/2019S/eecs101002/dld003
+SYNOPSYS=/usr/cad/synopsys/icc/cur
+LD_LIBRARY_PATH=/usr/cad/cadence/INCISIV/cur/tools/lib:/usr/cad/cadence/INCISIV/cur/tools/vtools/vfault/lib:::/usr/cad/cadence/EDI/cur//tools/tlfUtil/lib:/usr/cad/cadence/CTOS/cur/tools/lib:/usr/cad/cadence/MMSIM/cur/tools/lib:/usr/cad/cadence/EXT/cur/tools/lib:/usr/cad/cadence/ETS/cur/tools/lib:/usr/cad/cadence/CONFRML/cur/tools/lib:/usr/cad/cadence/IC/cur/tools/lib:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/dmtools/lib:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/pc/lib:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/common/lib-any:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/common/libso-gcc-4.7.2:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/gnu/gcc-4.7.2/lib:/usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/dmtools/lib:/lib
+SYN_MAN_DIR=/usr/cad/synopsys/synthesis/cur/doc/syn/man
+LOGNAME=dld003
+VCS_CC=gcc
+HOSTNAME=ic24.cs.nthu.edu.tw
+VIMRUNTIME=/usr/share/vim/vim70
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+OSTYPE=linux
+SHLVL=2
+COWAREHOME=/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux
+USER=dld003
+SNPS_VIEW_CONFIG_PATH=/users/course/2019S/eecs101002/dld003/.synopsys/viewconfig:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/IP:/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/common/etc/viewconfig
+SYNTHESIS=/usr/cad/synopsys/synthesis/cur
+CVS_RSH=ssh
+MAKEFLAGS=
+MFLAGS=
+SSH_CLIENT=192.168.75.200 50969 22
+MAIL=/var/spool/mail/dld003
+COWARE_AUX_BIN=/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/common/bin
+COWARE_JRE=/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux/../linux/java
+COWAREDOC_INSTALLED_AT=/usr/cad/synopsys/pa_virtualizer/vJ-2014.12/Documentation
+OAHOME=/usr/cad/cadence/oa_v22.04.073
+HOSTTYPE=x86_64-linux
+VERPLEX_HOME=/usr/cad/cadence/CONFRML/cur
+SNPS_VP_DOC=/usr/cad/synopsys/pa_virtualizer/vJ-2014.12/Documentation
+COWARE_CXX_COMPILER=gcc-4.7.2
+GROUP=eecs101002
+CDS_Netlisting_Mode=Analog
+INPUTRC=/etc/inputrc
+SNPS_VP_HOME=/usr/cad/synopsys/pa_virtualizer/cur/SLS/linux
+LANG=en_US
+TERM=xterm-256color
+HOST=ic24.cs.nthu.edu.tw
+MAKELEVEL=1
+_IRUNROOT_=/usr/cad/cadence/INCISIV/cur/tools
+CDS_ARCH=lnx86
+NCRUNMODE=ncverilog:./INCA_libs/irun.lnx86.14.10.nc
+IRUNBATCH=FALSE
+IMPERAS_PORT_FILE=.vsp_ovp_gdb_port
+TCL_LIBRARY=/usr/cad/cadence/INCISIV/cur/tools/inca/files/tcl/library
+Runtime command line arguments:
+argv[0]=ncverilog
+argv[1]=ALU_tb.v
+argv[2]=ALU.v
+93 profile - 100
+          CPU/Mem usage: 0.050 sys,  0.040 user,  49.25M sys,  0.00M vm
+94 VC callback profile - scalar:0 vector:0
+95 Thu Apr 18 23:33:16 2019
+96 pliAppInit
+97 *Verdi3* : Enable Parallel Dumping.
+98 pliAppMiscSet: New Sim Round
+99 pliEntryInit
+100 LIBSSCORE=found /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius141.so through $LD_LIBRARY_PATH setting.
+101 Catch signal 11. Stack trace follows:
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x003a0f93 in __read_nocancel () from /lib/libc.so.6
+#2  0x0033e238 in _IO_file_read_internal () from /lib/libc.so.6
+#3  0x0033f590 in _IO_new_file_underflow () from /lib/libc.so.6
+#4  0x0033fc8b in _IO_default_uflow_internal () from /lib/libc.so.6
+#5  0x0034100d in __uflow () from /lib/libc.so.6
+#6  0x003348b6 in _IO_getline_info_internal () from /lib/libc.so.6
+#7  0x00334801 in _IO_getline_internal () from /lib/libc.so.6
+#8  0x0033377a in fgets () from /lib/libc.so.6
+#9  0xf74e4c5a in ndpGetCallStack () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius141.so
+#10 0xf751be13 in pliAppDbg_SigHandler () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius141.so
+#11 0xf74e464d in catchSignalCB () from /usr/cad/synopsys/verdi/cur/share/PLI/IUS/LINUX/libsscore_ius141.so
+#12 <signal handler called>
+#13 0x0b344d62 in ?? ()
+#14 0x0b344d58 in ?? ()
+#15 0x00000000 in ?? ()
+102 Sim process exit

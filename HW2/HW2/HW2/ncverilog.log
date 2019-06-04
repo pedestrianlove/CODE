@@ -1,0 +1,10 @@
+ncverilog: 14.10-s005: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	ncverilog	14.10-s005: Started on Apr 18, 2019 at 23:33:28 CST
+ncverilog
+	ALU_tb.v
+	ALU_syn.v
+	-v
+	/theda21_2/CBDK_IC_Contest/cur/Verilog/tsmc13.v
+	+define+SDF
+ncverilog: *E,FILEMIS: Cannot find the provided file ALU_syn.v.
+TOOL:	ncverilog	14.10-s005: Exiting on Apr 18, 2019 at 23:33:28 CST  (total: 00:00:00)
