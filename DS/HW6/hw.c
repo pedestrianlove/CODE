@@ -189,7 +189,7 @@ node* init_node (int sum)
 	new -> PARENT = NULL;
 	new -> CHILD_NO = '3';
 
-	new -> CHAR = 'X';
+	new -> CHAR = '~';
 	return new;
 }
 void shift (int numbers)
