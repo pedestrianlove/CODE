@@ -12,6 +12,7 @@ typedef struct node {
 
 node** distro;
 node** alpha;
+int COUNTER = 0;
 
 // internal
 void initialize_distro (char);
@@ -43,9 +44,8 @@ int main()
 	Prepare_distro ();
 	
 	Get_the_text (lines);
-	_show_distro ();
+	
 	Sort_distro (number_of_characters);	
-	_show_distro ();
 
 	Form_the_tree ();
 
@@ -55,7 +55,6 @@ int main()
 		printf("%s", encoded);
 		free (encoded);
 	}
-
 
 	free (word);
 	return 0;
@@ -142,8 +141,9 @@ void merge (int start, int mid, int end)
 			distro[master_counter++] = left[left_counter++];
 			continue;
 		}
-		if (left[left_counter]->SUM <= right[right_counter]->SUM) 
+		if (left[left_counter]->SUM <= right[right_counter]->SUM) {
 			distro[master_counter++] = left[left_counter++];
+		}
 		else
 			distro[master_counter++] = right[right_counter++];
 	}
@@ -162,15 +162,14 @@ void Form_the_tree ()
 		append (ptr, distro[0]);
 		append (ptr, distro[1]);
 		
-		distro[0] = ptr;
-		distro[1] = NULL;
-		printf("---------------------------------------\n");		
-		_show_the_tree (distro[0]);
-		shift (--top);
-		Sort_distro (top);
+		distro[0] = NULL;
+		distro[1] = ptr;
+		distro = distro +1;
+		//shift (--top);
+		Sort_distro (--top);
 	}
-	if (distro[1] == NULL)
-		printf("The tree is sucessfully built\n");
+		printf("---------------------------\n");
+		_show_the_tree (distro[0]);
 	printf("The last node is of CHAR %c, SUM %d and CHILD_NO %c\n", distro[0]->CHAR, distro[0]->SUM, distro[0]->CHILD_NO);
 }
 void _show_the_tree (node* ptr)
