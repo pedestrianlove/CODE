@@ -114,11 +114,11 @@ void merge (int start, int mid, int end)
 	    master_counter = start;
 	
 
-	node **left = malloc (sizeof(node*) * (mid-start + 1));
-	for (int i = 0; i < mid-start+1 ; i++)
+	node **left = malloc (sizeof(node*) * 26);
+	for (int i = 0; i < 26 ; i++)
 		left[i] = NULL;
-       	node **right = malloc (sizeof(node*) * (end - mid + 1));
-	for (int i = 0; i < end-mid+1 ; i++)
+       	node **right = malloc (sizeof(node*) * 26);
+	for (int i = 0; i < 26 ; i++)
 		right[i] = NULL;
 
 
