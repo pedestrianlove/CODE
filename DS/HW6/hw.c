@@ -40,9 +40,9 @@ int main()
 	Prepare_distro ();
 	
 	Get_the_text (lines);
-	printf("I'm alive\n");
 
 	Sort_distro ();	
+	printf("I'm alive\n");
 
 	Form_the_tree ();
 
@@ -86,11 +86,9 @@ void initialize_distro (char character)
 void Get_the_text (int lines)
 {
 	char* text = malloc (sizeof(char)* 101);
-	for (int i = 0; i< lines; i++) {
-		while (scanf ("%s", text) != '\n'){
-			for (int j = 0; j < strlen (text); j++) {
-				distro[text[j] - 'a'] -> SUM++;
-			}
+	while (scanf ("%s", text) != EOF){
+		for (int j = 0; j < strlen (text); j++) {
+			distro[text[j] - 'a'] -> SUM++;
 		}
 	}
 	free (text);
