@@ -42,7 +42,6 @@ int main()
 	Get_the_text (lines);
 
 	Sort_distro ();	
-	printf("I'm alive\n");
 
 	Form_the_tree ();
 
