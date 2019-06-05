@@ -15,7 +15,7 @@ node** alpha;
 
 // internal
 void initialize_distro (char);
-void mergesort (int, int);
+void mergesort_t (int, int);
 void merge (int, int, int);
 void append (node*, node*);
 void shift (int);
@@ -34,12 +34,13 @@ void FREE (char*, char*);
 int main()
 {
 	int lines;
+	char tmp;
 	char* word = malloc (sizeof(char)* 101);
-	scanf("%d,%s", &lines, word);
-
+	scanf("%d%c%s", &lines, &tmp, word);
 	Prepare_distro ();
 	
 	Get_the_text (lines);
+	printf("I'm alive\n");
 
 	Sort_distro ();	
 
@@ -60,6 +61,7 @@ int main()
 
 void Prepare_distro () 
 {
+	alpha = malloc (sizeof(node*) * 26);
 	distro = malloc (sizeof(node*) * 26);
 	for (char i = 'a'; i<='z' ; i++) {
 		initialize_distro (i);
@@ -97,14 +99,14 @@ void Get_the_text (int lines)
 
 void Sort_distro ()
 {
-	mergesort (0, 25);
+	mergesort_t (0, 25);
 }
-void mergesort (int start, int end)
+void mergesort_t (int start, int end)
 {
 	if (start < end){
 		int mid = start + (end - start) /2 ;
-		mergesort (start, mid);
-		mergesort (mid+1, end);
+		mergesort_t (start, mid);
+		mergesort_t (mid+1, end);
 		merge (start, mid, end);
 	}
 }
@@ -113,8 +115,14 @@ void merge (int start, int mid, int end)
 	int left_counter = 0,
 	    right_counter = 0,
 	    master_counter = start;
+	
 	node **left = malloc (sizeof(node*) * (mid-start + 1));
+	for (int i = 0; i < mid-start+1 ; i++)
+		left[i] = NULL;
        	node **right = malloc (sizeof(node*) * (end - mid + 1));
+	for (int i = 0; i < end-mid+1 ; i++)
+		right[i] = NULL;
+
 	for (int i = start; i <= mid; i++)
 		left[i] = distro[i];
 	for (int i = mid+1; i<= end; i++)
