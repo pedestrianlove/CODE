@@ -116,11 +116,11 @@ void merge (int start, int mid, int end)
 	    master_counter = start;
 	
 
-	node **left = malloc (sizeof(node*) * 30);
-	for (int i = 0; i < 30 ; i++)
+	node **left = malloc (sizeof(node*) * 26);
+	for (int i = 0; i < 26 ; i++)
 		left[i] = NULL;
-       	node **right = malloc (sizeof(node*) * 30);
-	for (int i = 0; i < 30 ; i++)
+       	node **right = malloc (sizeof(node*) * 26);
+	for (int i = 0; i < 26 ; i++)
 		right[i] = NULL;
 
 
@@ -134,11 +134,11 @@ void merge (int start, int mid, int end)
 	while (master_counter <= end){
 		if (left[left_counter] == NULL) {
 			distro[master_counter++] = right[right_counter++];
-			continue;
+			break;
 		}
 		if (right[right_counter] == NULL) {
 			distro[master_counter++] = left[left_counter++];
-			continue;
+			break;
 		}
 		if (left[left_counter]->SUM <= right[right_counter]->SUM) 
 			distro[master_counter++] = left[left_counter++];
@@ -153,8 +153,9 @@ void merge (int start, int mid, int end)
 
 void Form_the_tree ()
 {
+	int i = 0;
 	int top = number_of_characters;
-	while (distro[0] != NULL && distro[1] != NULL) {
+	while (distro[i] != NULL && top >= 2) {
 		node* ptr = init_node (distro[0]->SUM + distro[1]->SUM);
 		
 		append (ptr, distro[0]);
