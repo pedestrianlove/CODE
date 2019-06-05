@@ -47,7 +47,7 @@ int main()
 
 	char* encoded;
 	for (int i = 0; i< strlen (word); i++) {
-		encoded= Encode_the_char (word[i]);
+		encoded = Encode_the_char (word[i]);
 		printf("%s", encoded);
 		free (encoded);
 	}
@@ -211,11 +211,9 @@ char* Encode_the_char (char word)
 {
 	int counter = 0;
 	char* tmp = malloc (sizeof(char) * 30);
-
 	node* ptr = alpha[word];
 	while (ptr -> CHILD_NO != '3') {
-		tmp[counter] = ptr -> CHILD_NO;
-		counter++;
+		tmp[counter++] = ptr -> CHILD_NO;
 		ptr = ptr -> PARENT;
 	}
 	tmp = reverse_string (tmp);
