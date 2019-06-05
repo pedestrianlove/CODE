@@ -113,6 +113,7 @@ void merge (int start, int mid, int end)
 	    right_counter = 0,
 	    master_counter = start;
 	
+
 	node **left = malloc (sizeof(node*) * (mid-start + 1));
 	for (int i = 0; i < mid-start+1 ; i++)
 		left[i] = NULL;
@@ -120,12 +121,23 @@ void merge (int start, int mid, int end)
 	for (int i = 0; i < end-mid+1 ; i++)
 		right[i] = NULL;
 
+
 	for (int i = start; i <= mid; i++)
-		left[i] = distro[i];
+		left[left_counter++] = distro[i];
 	for (int i = mid+1; i<= end; i++)
-		right[i] = distro[i];
-	
-	while (left_counter < mid-start+1  &&  right_counter < end-mid+1  &&  master_counter <= end){
+		right[right_counter++] = distro[i];
+
+
+	left_counter = right_counter = 0;	
+	while (master_counter <= end){
+		if (left[left_counter] == NULL) {
+			distro[master_counter++] = right[right_counter++];
+			break;
+		}
+		if (right[right_counter] == NULL) {
+			distro[master_counter++] = left[left_counter++];
+			break;
+		}
 		if (left[left_counter]->SUM <= right[right_counter]->SUM) 
 			distro[master_counter++] = left[left_counter++];
 		else
