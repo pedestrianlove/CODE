@@ -19,9 +19,10 @@ void initialize_distro (char);
 void mergesort_t (int, int);
 void merge (int, int, int);
 void append (node*, node*);
-void shift (int);
+int clean_up_distro(int);
 node* init_node (int sum);
 char* reverse_string (char*);
+void shift ();
 
 // interface
 void Prepare_distro ();
@@ -42,12 +43,13 @@ int main()
 	char* word = malloc (sizeof(char)* 101);
 	scanf("%d%c%s", &lines, &tmp, word);
 	Prepare_distro ();
-	
+		
 	Get_the_text (lines);
 	
-	Sort_distro (number_of_characters);	
-
+	Sort_distro (COUNTER);
+	printf("The COUNTER is %d\n", COUNTER);
 	Form_the_tree ();
+	_show_the_tree (distro[0]);
 
 	char* encoded;
 	for (int i = 0; i< strlen (word); i++) {
@@ -55,6 +57,7 @@ int main()
 		printf("%s", encoded);
 		free (encoded);
 	}
+	printf("\n");
 
 	free (word);
 	return 0;
@@ -65,15 +68,38 @@ void Prepare_distro ()
 {
 	alpha = malloc (sizeof(node*) * 26);
 	distro = malloc (sizeof(node*) * 26);
-	for (char i = 'a'; i<='z' ; i++) {
-		initialize_distro (i);
+	for (int i = 0; i< 26; i++) {
+		alpha[i] = NULL;
+		distro[i] = NULL;
 	}
+
+}
+
+
+void Get_the_text (int lines)
+{
+	int counter = 0;
+	char* text = malloc (sizeof(char)* 101);
+	while (scanf ("%s", text) != EOF){
+		for (int j = 0; j < strlen (text); j++) {
+			if (distro[text[j] - 'a'] == NULL) {
+				counter++;
+				initialize_distro(text[j]);
+				alpha[text[j] - 'a'] = distro[text[j] - 'a'];
+			}
+			else
+				distro[text[j] - 'a'] -> SUM++;
+		}
+	}
+	COUNTER = counter;
+	shift ();
+	free (text);
 }
 void initialize_distro (char character)
 {
 	node* new = malloc (sizeof(node));
 	new -> CHAR = character;
-	new -> SUM = 0;
+	new -> SUM = 1;
 	new -> PARENT = NULL;
 	new -> CHILD[0] = NULL;
 	new -> CHILD[1] = NULL;
@@ -83,17 +109,17 @@ void initialize_distro (char character)
 	distro[character - 'a'] = new;
 	alpha[character - 'a'] = new;
 }
-
-
-void Get_the_text (int lines)
+void shift ()
 {
-	char* text = malloc (sizeof(char)* 101);
-	while (scanf ("%s", text) != EOF){
-		for (int j = 0; j < strlen (text); j++) {
-			distro[text[j] - 'a'] -> SUM++;
+	int i = 0, real_counter = 0;
+	while (i < 26) {
+		if (distro[i] == NULL)
+			i++;
+		else {
+			distro[real_counter++] = distro[i];
+			distro[i++] = NULL;
 		}
 	}
-	free (text);
 }
 
 
@@ -133,6 +159,7 @@ void merge (int start, int mid, int end)
 
 	left_counter = right_counter = 0;	
 	while (master_counter <= end){
+		
 		if (left[left_counter] == NULL) {
 			distro[master_counter++] = right[right_counter++];
 			continue;
@@ -141,11 +168,20 @@ void merge (int start, int mid, int end)
 			distro[master_counter++] = left[left_counter++];
 			continue;
 		}
+
+
 		if (left[left_counter]->SUM <= right[right_counter]->SUM) {
+			if (left[left_counter]->SUM == right[right_counter]->SUM) {
+				if (left[left_counter]->CHAR == '~'  &&  right[right_counter]->CHAR != '~') {
+					distro[master_counter++] = right[right_counter++];
+					continue;
+				}
+			}
 			distro[master_counter++] = left[left_counter++];
 		}
-		else
+		else {
 			distro[master_counter++] = right[right_counter++];
+		}
 	}
 
 	free (left);
@@ -155,8 +191,11 @@ void merge (int start, int mid, int end)
 
 void Form_the_tree ()
 {
-	int top = number_of_characters;
+	//top = clean_up_distro (top);
+	//_show_distro ();
+	int top = COUNTER;
 	while (distro[0] != NULL && distro[1] != NULL) {
+			
 		node* ptr = init_node (distro[0]->SUM + distro[1]->SUM);
 		
 		append (ptr, distro[0]);
@@ -164,13 +203,12 @@ void Form_the_tree ()
 		
 		distro[0] = NULL;
 		distro[1] = ptr;
-		distro = distro +1;
-		//shift (--top);
+		distro ++;
+		
 		Sort_distro (--top);
 	}
-		printf("---------------------------\n");
-		_show_the_tree (distro[0]);
-	printf("The last node is of CHAR %c, SUM %d and CHILD_NO %c\n", distro[0]->CHAR, distro[0]->SUM, distro[0]->CHILD_NO);
+	
+	//_show_the_tree (distro[0]);
 }
 void _show_the_tree (node* ptr)
 {
@@ -192,27 +230,28 @@ node* init_node (int sum)
 	new -> CHAR = '~';
 	return new;
 }
-void shift (int numbers)
+int clean_up_distro (int numbers)
 {
-	int counter = 0;
-	int i = 0;
-	while (counter < numbers) {
-		while (distro[i] == NULL) {
-			i++;
-		}
-		distro[counter++] = distro[i];
+	while (distro[0]->SUM == 0) {
+		distro[0] = NULL;
+		
+		distro++;
+		numbers--;
 	}
+	return numbers;
 }
 void append (node* parent, node* child)
 {
 	if (parent -> CHILD[0] == NULL) {
 		parent -> CHILD[0] = child;
 		child -> CHILD_NO = '0';
+		child -> PARENT = parent;
 		return;
 	}
 	else if (parent -> CHILD[1] == NULL) {
 		parent -> CHILD[1] = child;
 		child -> CHILD_NO = '1';
+		child -> PARENT = parent;
 		return;
 	}
 	else
@@ -226,12 +265,10 @@ char* Encode_the_char (char word)
 	int counter = 0;
 	char* tmp = malloc (sizeof(char) * 30);
 	node* ptr = alpha[word-'a'];
-	printf("CHAR is %c, CHILD_NO is %c\n", ptr->CHAR, ptr->CHILD_NO);
 	while (ptr -> CHILD_NO != '3') {
 		tmp[counter++] = ptr -> CHILD_NO;
 		ptr = ptr -> PARENT;
 	}
-	printf("The char %c is encoded as %s\n", word, tmp);
 	tmp = reverse_string (tmp);
 	return tmp;
 }
@@ -249,6 +286,7 @@ char* reverse_string (char* str)
 
 void _show_distro ()
 {
-	for (int i = 0; i< 26; i++)
+	printf("HI\n");
+	for (int i = 0; distro[i] != NULL; i++)
 		printf("distro '%d' is of CHAR %c and of SUM %d\n", i, distro[i] -> CHAR, distro[i] -> SUM);
 }
