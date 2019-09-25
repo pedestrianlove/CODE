@@ -1,33 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
-
 
 int main ()
 {
-	// variables
-	int items;
-	float price, unit;
-	double final_price;
+	// Variables
+	int age, length, money;
 
-	// input && process
-	printf ("請輸入品項的數目：\n");
-	scanf ("%d", &items);
 	
+	// Input
+	printf ("Please input your personal data:\n");
 	
-	final_price = 0;
-	for (int i = 0; i < items; i++) {
-		printf ("請輸入品項的價格：\n");
-		scanf ("%f", &price);
-		printf ("請輸入品項的數量：\n");
-		scanf ("%f", &unit);
-		final_price += price * unit;
-	}
+	printf ("AGE:\n");
+	scanf ("%d", &age);
 
-	// output
-	printf("總計：%lf\n", final_price);
+	printf ("LENGTH:\n");
+	scanf ("%d", &length);
 
+	printf ("INCOME PER MONTH:\n");
+	scanf ("%d", &money);
 
+	
+	// Process && Output
+	if (AGE > 30  ||  AGE < 25 )
+		printf ("NO!\n");
+	else if (LENGTH < 160  ||  LENGTH > 175)
+		printf ("NO!\n");
+	else if (money < 300000)
+		printf ("NO\n");
+	else
+		printf ("YES!\n");
 
 	return 0;
 }
-
