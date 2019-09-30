@@ -3,7 +3,7 @@
 int main ()
 {
 	// Variables
-	int age, length, money;
+	int age, height, money;
 
 	
 	// Input
@@ -12,19 +12,19 @@ int main ()
 	printf ("AGE:\n");
 	scanf ("%d", &age);
 
-	printf ("LENGTH:\n");
-	scanf ("%d", &length);
+	printf ("HEIGHT:\n");
+	scanf ("%d", &height);
 
 	printf ("INCOME PER MONTH:\n");
-	scanf ("%d", &money);
+	scanf ("%d", &money); //我diagram寫成300000,應該是30000
 
 	
 	// Process && Output
-	if (AGE > 30  ||  AGE < 25 )
+	if (age > 30  ||  age < 25 )
 		printf ("NO!\n");
-	else if (LENGTH < 160  ||  LENGTH > 175)
+	else if (height < 160  ||  height > 175)
 		printf ("NO!\n");
-	else if (money < 300000)
+	else if (money < 30000)
 		printf ("NO\n");
 	else
 		printf ("YES!\n");
