@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Voting population && election entries
 #define M 50
@@ -14,7 +15,7 @@ int main ()
 
 	// variables
 	int votes[N+1];
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i <= N; i++)
 		votes[i] = 0;
 
 	// simulation
@@ -26,13 +27,12 @@ int main ()
 	int vote_sum = 0;
 	for (int i=  0; i < N; i++) {
 		printf ("%d elect got %d votes!\n", i+1, votes[i]);
-		vote_sum += votes[i]
+		vote_sum += votes[i];
 	}
 
 	// analyze the ditched votes
 	vote_sum += votes[N];
-	float ditched = (float) votes [N];
-	printf ("%d person ditched their votes, with the percentage of %f%c \n", ditched, (ditched/vote_sum)*100, '%');
+	printf ("%d person ditched their votes, with the percentage of %lf\%\n", votes[N], ((double)votes[N]/vote_sum)*100);
 	
 
 
