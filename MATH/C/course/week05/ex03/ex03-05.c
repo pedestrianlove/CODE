@@ -17,7 +17,6 @@ double two (int N)
 	for (int i = 0; i < N; i++) {
 		sum += pow (0.06, i+1);
 	}
-
 	return sum;
 }
 
@@ -25,9 +24,8 @@ double three (int N)
 {
 	double sum = 0;
 	for (double i = 0; i < N; i++) {
-		sum += 1/(i+1)
+		sum += 1/(i+1);
 	}
-
 	return sum;
 }
 
@@ -37,7 +35,6 @@ double four (int N)
 	for (int i = 0; i <= N; i++) {
 		sum += pow(0.5, i);
 	}
-
 	return sum;
 }
 
@@ -52,35 +49,35 @@ double five (int N)
 
 int main ()
 {
-	int CALC;
-	printf ("Please input a kind of calculation you desires:\n")
+	int N, CALC;
+	printf ("Please input a kind of calculation you desires:\n");
 	scanf ("%d", &CALC);
-	printf ("Please input a number N:\n")
+	printf ("Please input a number N:\n");
 	scanf ("%d", &N);
 
 	double ANS;
 	switch (CALC) {
 		case 1:
-			ANS = one ();
+			ANS = one (N);
 			break;
 		case 2:
-			ANS = two ();
+			ANS = two (N);
 			break;
 		case 3:
-			ANS = three ();
+			ANS = three (N);
 			break;
 		case 4:
-			ANS = four ();
+			ANS = four (N);
 			break;
 		case 5:
-			ANS = five ();
+			ANS = five (N);
 			break;
 		default:
 			printf ("INPUT ERROR! PLEASE TRY AGAIN LATER!\n");
 	}
 	
 	// OUTPUT
-	printf ("The answer is %lf", ANS);
+	printf ("The answer is %.3lf\n", ANS);
 
 	return 0;
 }

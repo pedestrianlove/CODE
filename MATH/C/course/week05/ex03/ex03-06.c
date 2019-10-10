@@ -16,7 +16,7 @@ int main ()
 			max = tmp;
 	}
 
-	printf ("The max is %lf\n", max);
+	printf ("The max is %.3lf\n", max);
 	
 
 	return 0;
