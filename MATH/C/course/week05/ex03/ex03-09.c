@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #define N 1000
 
@@ -19,8 +20,12 @@ int check_prime (int number)
 
 int main ()
 {
-	for (int i = 0; i < N; i++) {
-			
+	int prime_counter = 0;
+	for (int i = 1; i <= N; i++) {
+		if (check_prime (i)) {
+			printf ("%5d ", i);
+			prime_counter ++;
+		}
 	}
 
 
