@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N 20		// half length of the base
+#define N 20		// height of the A
 
 void draw_line (int num, char C) {
 	for (int i = 0; i < num; i++)
@@ -9,17 +9,18 @@ void draw_line (int num, char C) {
 
 int main ()
 {
-	// draw the slanted line
 	for (int row = 0; row < N; row++) {
 		for (int col = 0; col < N; col++ ) {
 			if (N-row-1 == col){
+				// print the left slanted line
 				printf ("*");
-				// enter "row-1" spacebars
+				// avoid 2 stars case in the first line
 				if (row != 0) {
+					// see if reach the mid and draw line of stars or spacebars 
 					if (row != N/2)
-						draw_line ((row)*2-1, ' ');
+						draw_line ( 2*row - 1, ' ');
 					else
-						draw_line ((row)*2-1, '*');
+						draw_line ( 2*row - 1, '*');
 					printf ("*\n");
 					break;
 				}
