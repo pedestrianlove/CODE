@@ -19,7 +19,13 @@ int main ()
 	scanf ("%d", &number);
 
 	// OUTPUT
-	printf ("%d\n", fib(number));
+	int line= 0;
+	for (int i = 1; i <= number; i++, line++) {
+		if (line % 20 == 0)
+			printf ("\n");
+		printf ("%5d ", fib(i));
+	}
 
+	printf ("\n");
 	return 0;
 }

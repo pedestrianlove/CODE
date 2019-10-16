@@ -1,3 +1,3 @@
 build:
-	gcc fib.c -o fib
+	c99 fib.c -o fib
 	./fib
