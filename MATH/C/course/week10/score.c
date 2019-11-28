@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 
-// USER DEFINED CONST
-#define N 52
+// GLOBAL VARIABLES
+int N = 52;
+int number_Count;
+/**********************************************************/
 
+
+// FUNCTION
 void WRITE_FILE (char* filePath)
 {
 	// init srand seed
@@ -30,16 +35,21 @@ int* READ_FILE (char* filePath)
 
 	// open the file and read
 	FILE* fp = fopen (filePath, "r");
-	for (int i = 0; i < N; i++)
-		fscanf (fp, "%d", &SCORE[i]);
+	number_Count = 0;
+	while (fscanf (fp, "%d", &SCORE[number_Count]) != EOF) {
+		number_Count ++;
+	}
 	
 	fclose (fp);
 	return SCORE;
 }
+/**********************************************************/
+
+
 
 int main (int argc, char* argv[])
 {
-	// init fileHandle
+	// init argument
 	char* fileHandle = argv[1];
 
 	// write && read file
@@ -65,6 +75,7 @@ int main (int argc, char* argv[])
 
 
 	// OUTPUT
+	printf ("We have %d terms in total.\n", number_Count);
 	printf ("SUM: %f\t MEAN: %f\n", SUM, AVG);
 	printf ("MAX: %f\t MIN: %f\n", MAX, MIN);
 	printf ("STD: %f\n", STD);
