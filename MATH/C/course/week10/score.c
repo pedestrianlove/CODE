@@ -37,10 +37,10 @@ int* READ_FILE (char* filePath)
 	return SCORE;
 }
 
-int main ()
+int main (int argc, char* argv[])
 {
 	// init fileHandle
-	char fileHandle[] = "score.dat";
+	char* fileHandle = argv[1];
 
 	// write && read file
 	WRITE_FILE (fileHandle);
@@ -55,7 +55,7 @@ int main ()
 	for (int i = 0 ; i < N; i++) {
 		SUM += SCORE[i];
 		MAX = (MAX < SCORE[i])?  SCORE[i]:MAX;
-		MIN = (MIN > SCORE[i])?  MIN:SCORE[i];
+		MIN = (MIN > SCORE[i])?  SCORE[i]:MIN;
 	}
 	AVG = SUM/N;
 	for (int i = 0; i < N; i++) {

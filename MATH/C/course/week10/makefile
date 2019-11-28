@@ -1,3 +1,3 @@
 build:
-	gcc score.c -o score
-	./score
+	c99 score.c -o score
+	./score score.dat
