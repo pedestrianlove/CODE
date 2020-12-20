@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # fetch the web source
-url = "http://140.128.102.136/Ranking"
+url = "http://www.tcgs.tc.edu.tw:1218/ShowUserStatistic?account=s08351050"
 req = requests.get (url)
 soup = BeautifulSoup (req.text, "html.parser")
 
@@ -12,12 +12,11 @@ soup = BeautifulSoup (req.text, "html.parser")
 grade = 0
 percentage = ''
 for AC in soup.find_all ('a'):
-	if (str (AC.get ('href'))[20:29] == 's08351050'):
+	if (str (AC.get ('href'))[25:34] == 's08351050'):
 		grade = int (str (AC.text))
-		div_tag = AC.parent
-		percentage = str (div_tag.find_next ('span').text).strip ().split ()[1]
+		percentage = str (AC.next_sibling).strip ().split ()[1]
 		break
 
 
 # output
-print ("THU CPE: {:d} AC".format (grade) + '(' + percentage + ')')
+print ("TCGS Judge: {:d} AC".format (grade, percentage) + percentage)

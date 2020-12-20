@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # fetch the web source
-url = "http://140.128.102.136/Ranking"
+url = "https://zerojudge.tw/Ranking?tab=tab03&schoolid=34"
 req = requests.get (url)
 soup = BeautifulSoup (req.text, "html.parser")
 
@@ -20,4 +20,4 @@ for AC in soup.find_all ('a'):
 
 
 # output
-print ("THU CPE: {:d} AC".format (grade) + '(' + percentage + ')')
+print ("Zerojudge: {:d} AC".format (grade) + '(' + percentage + ')')
